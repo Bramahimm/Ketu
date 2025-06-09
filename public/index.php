@@ -1,15 +1,17 @@
 <?php
 session_start();
+$error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
+unset($_SESSION['error']); // supaya error hilang setelah ditampilkan
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login - Ketu</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
 
 <body class="min-h-screen flex items-center justify-center bg-[#050811]">
@@ -21,12 +23,21 @@ session_start();
                 <p class="text-sm font-semibold">Selamat Datang di Kelola TugasMu</p>
             </div>
         </div>
+
         <!-- Form Login -->
         <div class="w-full md:w-1/2 p-8 relative">
             <div class="text-center mb-6">
                 <img src="../assets/buku.png" alt="Unila" class="mx-auto w-20 mb-2 rounded-full" />
                 <h2 class="text-xl font-semibold text-white">Login</h2>
             </div>
+
+            <!-- Tampilkan error jika ada -->
+            <?php if ($error): ?>
+                <div class="bg-red-600 text-white p-3 rounded mb-4 text-center">
+                    <?= htmlspecialchars($error) ?>
+                </div>
+            <?php endif; ?>
+
             <form action="process/login.php" method="POST" class="space-y-4">
                 <div>
                     <label class="sr-only">Email</label>
@@ -42,6 +53,7 @@ session_start();
                             class="w-full py-2 px-3 focus:outline-none" />
                     </div>
                 </div>
+
                 <div>
                     <label class="sr-only">Password</label>
                     <div class="flex items-center border rounded-md overflow-hidden">
@@ -56,12 +68,13 @@ session_start();
                             class="w-full py-2 px-3 focus:outline-none" />
                     </div>
                 </div>
+
                 <div class="flex justify-center items-center">
                     <button type="submit"
                         class="w-20 bg-[#050811] text-white py-2 rounded-md hover:bg-blue-700 hover:text-white transition">Login</button>
                 </div>
             </form>
-            <p class="text-sm text-right mt-2"><a href="#" class="text-white hover:underline">Belum Punya akun?</a></p>
+            <p class="text-sm text-right mt-2"><a href="register.php" class="text-white hover:underline">Belum Punya akun?</a></p>
         </div>
     </div>
 </body>
