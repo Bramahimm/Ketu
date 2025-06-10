@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../koneksi.php'; // ini pathnya sudah benar sesuai struktur folder kamu
+require_once '/../includes/koneksi.php'; // ini pathnya sudah benar sesuai struktur folder kamu
 
 $errors = [];
 

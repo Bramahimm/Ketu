@@ -12,13 +12,14 @@ unset($_SESSION['error']); // supaya error hilang setelah ditampilkan
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login - Ketu</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-png" href="../assets/logoketu.png">
 </head>
 
 <body class="min-h-screen flex items-center justify-center bg-[#050811]">
     <div class="bg-[#C71585] shadow-lg flex rounded-xl overflow-hidden max-w-4xl w-full">
         <!-- Gambar kiri -->
         <div class="w-1/2 hidden md:block relative">
-            <img src="../assets/buku.png" alt="buku" class="object-cover w-full h-full" />
+            <img src="../assets/logoketu.png" alt="buku" class="object-cover w-full h-full" />
             <div class="absolute bottom-0 left-0 w-full text-black p-4 bg-gray-500 bg-opacity-50">
                 <p class="text-sm font-semibold">Selamat Datang di Kelola TugasMu</p>
             </div>
@@ -27,7 +28,7 @@ unset($_SESSION['error']); // supaya error hilang setelah ditampilkan
         <!-- Form Login -->
         <div class="w-full md:w-1/2 p-8 relative">
             <div class="text-center mb-6">
-                <img src="../assets/buku.png" alt="Unila" class="mx-auto w-20 mb-2 rounded-full" />
+                <img src="../assets/logoketu.png" alt="Unila" class="mx-auto w-20 mb-2 rounded-full" />
                 <h2 class="text-xl font-semibold text-white">Login</h2>
             </div>
 
