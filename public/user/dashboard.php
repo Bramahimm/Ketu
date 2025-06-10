@@ -14,19 +14,24 @@
 <body class="bg-gray-100 text-gray-800 font-sans">
     <!-- Header -->
     <header class="bg-white shadow flex justify-between items-center px-6 py-4">
-        <div class="text-xl font-bold text-indigo-600">Ketu <span class="text-sm text-gray-600">Kelola Tugasmu Dengan baik</span></div>
+        <div class="text-xl font-bold text-indigo-600">Ketu <span class="text-sm text-gray-600">Kelola Tugasmu Dengan
+                baik</span></div>
         <div class="flex items-center gap-4">
             <div class="relative">
                 <button id="profileButton" class="flex items-center space-x-2 focus:outline-none">
                     <span class="font-semibold">Bram Ahimsa Simbolon</span>
                     <ion-avatar class="w-8 h-8">
-                        <img src="../../assets/fotoSayaa.jpg" alt="Avatar" class="w-full h-full object-cover rounded-full">
+                        <img src="../../assets/fotoSayaa.jpg" alt="Avatar"
+                            class="w-full h-full object-cover rounded-full">
                     </ion-avatar>
                 </button>
                 <div id="profileDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg p-2 hidden">
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i class="fas fa-user mr-2"></i>Profil Saya</a>
-                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i class="fas fa-cog mr-2"></i>Pengaturan</a>
-                    <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i class="fas fa-sign-out-alt mr-2"></i>Keluar</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i
+                            class="fas fa-user mr-2"></i>Profil Saya</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i
+                            class="fas fa-cog mr-2"></i>Pengaturan</a>
+                    <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Keluar</a>
                 </div>
             </div>
         </div>
@@ -37,14 +42,19 @@
         <!-- Search & Filter -->
         <div class="flex justify-between items-center">
             <div class="w-1/3 bg-white rounded-xl shadow-sm px-0.5 py-0.5">
-                <input type="text" placeholder="Cari tugas" class="w-full bg-transparent border-none outline-none focus:ring-0 placeholder-gray-400 appearance-none" />
+                <input type="text" placeholder="Cari tugas"
+                    class="w-full bg-transparent border-none outline-none focus:ring-0 placeholder-gray-400 appearance-none" />
             </div>
             <div class="space-x-2">
-                <button class="bg-white border border-gray-300 text-sm px-3 py-1 rounded-full"><i class="fas fa-briefcase mr-1"></i>Kategori: Pekerjaan</button>
-                <button class="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full"><i class="fas fa-flag mr-1"></i>Prioritas: Tinggi</button>
-                <button class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full"><i class="fas fa-tasks mr-1"></i>Status: Belum Selesai</button>
+                <button class="bg-white border border-gray-300 text-sm px-3 py-1 rounded-full"><i
+                        class="fas fa-briefcase mr-1"></i>Kategori: Pekerjaan</button>
+                <button class="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full"><i
+                        class="fas fa-flag mr-1"></i>Prioritas: Tinggi</button>
+                <button class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full"><i
+                        class="fas fa-tasks mr-1"></i>Status: Belum Selesai</button>
                 <button class="text-sm text-gray-600 underline">Hapus Semua</button>
-                <button class="bg-indigo-600 text-white text-sm px-4 py-2 rounded-md ml-2"><i class="fas fa-plus mr-1"></i>Tambah Tugas</button>
+                <button class="bg-indigo-600 text-white text-sm px-4 py-2 rounded-md ml-2"><i
+                        class="fas fa-plus mr-1"></i>Tambah Tugas</button>
             </div>
         </div>
 
@@ -112,11 +122,13 @@
             <h2 class="text-lg font-bold mb-2">Daftar Tugas</h2>
             <div id="task-list" class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-white p-4 rounded-xl shadow relative group">
-                    <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full"><i class="fas fa-briefcase mr-1"></i>Pekerjaan</span>
+                    <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full"><i
+                            class="fas fa-briefcase mr-1"></i>Pekerjaan</span>
                     <div class="flex items-start gap-2 mt-2">
                         <div>
                             <h3 class="font-semibold text-gray-800">Presentasi Laporan Keuangan Q2</h3>
-                            <p class="text-sm text-gray-600">Menyiapkan slide dan data untuk presentasi laporan kuartal kedua kepada tim manajemen.</p>
+                            <p class="text-sm text-gray-600">Menyiapkan slide dan data untuk presentasi laporan kuartal
+                                kedua kepada tim manajemen.</p>
                         </div>
                     </div>
                     <div class="flex justify-between text-sm text-gray-500 mt-2">
@@ -129,11 +141,16 @@
                         <button onclick="toggleMenu(this)" class="text-gray-500 hover:text-gray-800 p-1 rounded-full">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
-                        <div class="hidden mt-2 w-40 bg-white rounded-lg shadow-lg absolute right-0 z-10 border text-sm">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fas fa-pen mr-2"></i>Edit</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fas fa-copy mr-2"></i>Duplikat</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fas fa-check mr-2"></i>Tandai Selesai</a>
-                            <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i class="fas fa-trash-alt mr-2"></i>Hapus</a>
+                        <div
+                            class="hidden mt-2 w-40 bg-white rounded-lg shadow-lg absolute right-0 z-10 border text-sm">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                    class="fas fa-pen mr-2"></i>Edit</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                    class="fas fa-copy mr-2"></i>Duplikat</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                    class="fas fa-check mr-2"></i>Tandai Selesai</a>
+                            <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i
+                                    class="fas fa-trash-alt mr-2"></i>Hapus</a>
                         </div>
                     </div>
                 </div>
