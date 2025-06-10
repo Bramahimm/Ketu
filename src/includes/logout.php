@@ -2,5 +2,5 @@
 session_start();
 session_unset(); // hapus semua data sesi
 session_destroy(); // hancurkan sesi
-header("Location: ../process/login.php"); // redirect ke halaman login
+header("Location: ../../public/index.php"); // redirect ke halaman login
 exit;
