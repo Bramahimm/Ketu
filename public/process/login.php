@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once '../../src/includes/koneksi.php'; // ini pathnya sudah benar sesuai struktur folder kamu
-
-$errors = [];
+require_once '../../src/includes/koneksi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
@@ -25,7 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         exit;
     } else {
-        $errors[] = "Email atau password salah.";
+        $_SESSION['error'] = 'Email atau password salah.';
+        header('Location: ../index.php');
+        exit;
     }
 }
-?>
