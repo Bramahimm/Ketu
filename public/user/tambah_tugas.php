@@ -20,6 +20,7 @@ if (isset($_POST['simpan_tugas'])) {
   $prioritas = $_POST['prioritas'];
   $dibuat_oleh = $_SESSION['user_id'];
 
+
   $sql = "INSERT INTO tugas (judul, deskripsi, kategori, deadline, prioritas, dibuat_oleh) VALUES (?, ?, ?, ?, ?, ?)";
 
   if (!$stmt = $conn->prepare($sql)) {
@@ -38,4 +39,5 @@ if (isset($_POST['simpan_tugas'])) {
     echo "Gagal menyimpan tugas: " . $stmt->error;
   }
 }
+
 ?>

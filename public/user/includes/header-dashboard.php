@@ -12,7 +12,7 @@
             <div id="profileDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg p-2 hidden">
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i class="fas fa-user mr-2"></i>Profil Saya</a>
                 <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i class="fas fa-cog mr-2"></i>Pengaturan</a>
-                <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i class="fas fa-sign-out-alt mr-2"></i>Keluar</a>
+                <a href="../../src/includes/logout.php" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i class="fas fa-sign-out-alt mr-2"></i>Keluar</a>
             </div>
         </div>
     </div>

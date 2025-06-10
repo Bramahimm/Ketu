@@ -1,12 +1,11 @@
 <?php
 $host = "localhost";
-$user = "root";
-$pass = "";
-$db = "kelola_tugasmu";
+$user = "bramahimm";
+$pass = "bramlafayet123";
+$db   = "kelola_tugasmu"; // GANTI dengan nama database kamu
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = mysqli_connect($host, $user, $pass, $db);
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if (!$conn) {
+    die("Koneksi gagal: " . mysqli_connect_error());
 }
-?>
