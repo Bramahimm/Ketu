@@ -12,7 +12,8 @@
 <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Header -->
     <header class="bg-white shadow flex justify-between items-center px-6 py-4">
-        <div class="text-xl font-bold text-indigo-600">Ketu <span class="text-sm text-gray-600">Kelola Tugasmu Dengan baik</span></div>
+        <div class="text-xl font-bold text-indigo-600">Ketu <span class="text-sm text-gray-600">Kelola Tugasmu Dengan
+                baik</span></div>
         <div class="flex items-center gap-4">
             <div class="relative">
                 <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
@@ -33,7 +34,10 @@
     <main class="p-6 space-y-6">
         <!-- Search & Filter -->
         <div class="flex justify-between items-center">
-            <input type="text" placeholder="Cari tugas" class="w-1/3 p-2 border rounded-md shadow-sm" />
+            <input type="text" placeholder="Cari tugas"
+                class="w-1/3 p-2 border border-white rounded-xl shadow-sm bg-gray-50 focus:outline-none focus:ring-transparent focus:border-white" />
+
+
             <div class="space-x-2">
                 <button class="bg-white border border-gray-300 text-sm px-3 py-1 rounded-full">Kategori:
                     Pekerjaan</button>
@@ -89,19 +93,21 @@
             </div>
             <div class="grid grid-cols-4 gap-4">
                 <!-- Kategori Card (contoh) -->
-                <div class="bg-white p-4 rounded shadow flex flex-col space-y-1">
-                    <div class="flex items-center space-x-2 text-indigo-600">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor">
-                            <path d="M9 12h6M9 16h6M13 8h2M9 8h.01" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" />
-                        </svg>
-                        <p class="font-semibold">Pekerjaan</p>
+                <a href="#">
+                    <div class="hover:bg-gray-100 bg-white p-4 rounded shadow flex flex-col space-y-1">
+                        <div class="flex items-center space-x-2 text-indigo-600">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor">
+                                <path d="M9 12h6M9 16h6M13 8h2M9 8h.01" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" />
+                            </svg>
+                            <p class="font-semibold">Pekerjaan</p>
+                        </div>
+                        <p class="text-sm text-gray-500">7 tugas</p>
+                        <div class="w-full bg-gray-200 h-1 rounded-full">
+                            <div class="bg-indigo-600 h-1 rounded-full" style="width: 40%;"></div>
+                        </div>
                     </div>
-                    <p class="text-sm text-gray-500">7 tugas</p>
-                    <div class="w-full bg-gray-200 h-1 rounded-full">
-                        <div class="bg-indigo-600 h-1 rounded-full" style="width: 40%;"></div>
-                    </div>
-                </div>
+                </a>
                 <!-- Tambahkan kategori lain di sini -->
             </div>
         </div>
