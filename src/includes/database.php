@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = 'nama_database';
+$dbname = 'ketu';
 $user = 'bramahimm'; //ubah aja sesuai user kamorang
 $pass = 'bramlafayet123'; //ini juga ubah sandi kamorang
 
