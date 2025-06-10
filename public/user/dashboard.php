@@ -7,25 +7,32 @@
     <title>TaskMaster - Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/forms@0.3.4/dist/forms.min.css" />
+    <link rel="icon" type="image/x-png" href="../../assets/logoketu.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans">
     <!-- Header -->
     <header class="bg-white shadow flex justify-between items-center px-6 py-4">
         <div class="text-xl font-bold text-indigo-600">Ketu <span class="text-sm text-gray-600">Kelola Tugasmu Dengan
                 baik</span></div>
         <div class="flex items-center gap-4">
             <div class="relative">
-                <span class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
-                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V4a2 2 0 00-4 0v1.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-semibold">Bram ahimsa nih</span>
-                <div class="w-8 h-8 rounded-full bg-indigo-500 text-white flex items-center justify-center">vrim</div>
+                <button id="profileButton" class="flex items-center space-x-2 focus:outline-none">
+                    <span class="font-semibold">Bram Ahimsa Simbolon</span>
+                    <ion-avatar class="w-8 h-8">
+                        <img src="../../assets/fotoSayaa.jpg" alt="Avatar"
+                            class="w-full h-full object-cover rounded-full">
+                    </ion-avatar>
+                </button>
+                <div id="profileDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg p-2 hidden">
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i
+                            class="fas fa-user mr-2"></i>Profil Saya</a>
+                    <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"><i
+                            class="fas fa-cog mr-2"></i>Pengaturan</a>
+                    <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i
+                            class="fas fa-sign-out-alt mr-2"></i>Keluar</a>
+                </div>
             </div>
         </div>
     </header>
@@ -34,17 +41,20 @@
     <main class="p-6 space-y-6">
         <!-- Search & Filter -->
         <div class="flex justify-between items-center">
-            <input type="text" placeholder="Cari tugas"
-                class="w-1/3 p-2 border border-white rounded-xl shadow-sm bg-gray-50 focus:outline-none focus:ring-transparent focus:border-white" />
-
-
+            <div class="w-1/3 bg-white rounded-xl shadow-sm px-0.5 py-0.5">
+                <input type="text" placeholder="Cari tugas"
+                    class="w-full bg-transparent border-none outline-none focus:ring-0 placeholder-gray-400 appearance-none" />
+            </div>
             <div class="space-x-2">
-                <button class="bg-white border border-gray-300 text-sm px-3 py-1 rounded-full">Kategori:
-                    Pekerjaan</button>
-                <button class="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full">Prioritas: Tinggi</button>
-                <button class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full">Status: Belum Selesai</button>
+                <button class="bg-white border border-gray-300 text-sm px-3 py-1 rounded-full"><i
+                        class="fas fa-briefcase mr-1"></i>Kategori: Pekerjaan</button>
+                <button class="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full"><i
+                        class="fas fa-flag mr-1"></i>Prioritas: Tinggi</button>
+                <button class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full"><i
+                        class="fas fa-tasks mr-1"></i>Status: Belum Selesai</button>
                 <button class="text-sm text-gray-600 underline">Hapus Semua</button>
-                <button class="bg-indigo-600 text-white text-sm px-4 py-2 rounded-md ml-2">+ Tambah Tugas</button>
+                <button class="bg-indigo-600 text-white text-sm px-4 py-2 rounded-md ml-2"><i
+                        class="fas fa-plus mr-1"></i>Tambah Tugas</button>
             </div>
         </div>
 
@@ -92,14 +102,10 @@
                 <a href="#" class="text-sm text-indigo-600">Lihat Semua</a>
             </div>
             <div class="grid grid-cols-4 gap-4">
-                <!-- Kategori Card (contoh) -->
                 <a href="#">
                     <div class="hover:bg-gray-100 bg-white p-4 rounded shadow flex flex-col space-y-1">
                         <div class="flex items-center space-x-2 text-indigo-600">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor">
-                                <path d="M9 12h6M9 16h6M13 8h2M9 8h.01" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" />
-                            </svg>
+                            <i class="fas fa-briefcase"></i>
                             <p class="font-semibold">Pekerjaan</p>
                         </div>
                         <p class="text-sm text-gray-500">7 tugas</p>
@@ -108,29 +114,82 @@
                         </div>
                     </div>
                 </a>
-                <!-- Tambahkan kategori lain di sini -->
             </div>
         </div>
 
         <!-- Daftar Tugas -->
         <div>
             <h2 class="text-lg font-bold mb-2">Daftar Tugas</h2>
-            <div class="grid grid-cols-3 gap-4">
-                <!-- Card tugas -->
-                <div class="bg-white p-4 rounded shadow space-y-2">
-                    <span class="text-xs bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full">Pekerjaan</span>
-                    <h3 class="font-semibold">Presentasi Laporan Keuangan Q2</h3>
-                    <p class="text-sm text-gray-600">Menyiapkan slide dan data untuk presentasi laporan keuangan kuartal
-                        kedua kepada tim manajemen.</p>
+            <div id="task-list" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-4 rounded-xl shadow relative group">
+                    <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full"><i
+                            class="fas fa-briefcase mr-1"></i>Pekerjaan</span>
+                    <div class="flex items-start gap-2 mt-2">
+                        <div>
+                            <h3 class="font-semibold text-gray-800">Presentasi Laporan Keuangan Q2</h3>
+                            <p class="text-sm text-gray-600">Menyiapkan slide dan data untuk presentasi laporan kuartal
+                                kedua kepada tim manajemen.</p>
+                        </div>
+                    </div>
                     <div class="flex justify-between text-sm text-gray-500 mt-2">
-                        <span>📅 10 Juni 2025</span>
-                        <span class="text-red-600 font-medium">Prioritas Tinggi</span>
+                        <span class="flex items-center gap-1">
+                            <i class="fas fa-calendar-alt"></i> 10 Juni 2025
+                        </span>
+                        <span class="text-red-600 font-medium"><i class="fas fa-flag mr-1"></i>Prioritas Tinggi</span>
+                    </div>
+                    <div class="absolute top-3 right-3">
+                        <button onclick="toggleMenu(this)" class="text-gray-500 hover:text-gray-800 p-1 rounded-full">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div
+                            class="hidden mt-2 w-40 bg-white rounded-lg shadow-lg absolute right-0 z-10 border text-sm">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                    class="fas fa-pen mr-2"></i>Edit</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                    class="fas fa-copy mr-2"></i>Duplikat</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
+                                    class="fas fa-check mr-2"></i>Tandai Selesai</a>
+                            <a href="#" class="block px-4 py-2 text-red-600 hover:bg-red-100"><i
+                                    class="fas fa-trash-alt mr-2"></i>Hapus</a>
+                        </div>
                     </div>
                 </div>
-                <!-- Tambah tugas lainnya -->
             </div>
         </div>
     </main>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const profileButton = document.getElementById("profileButton");
+        const profileDropdown = document.getElementById("profileDropdown");
+
+        profileButton.addEventListener("click", function (event) {
+            profileDropdown.classList.toggle("hidden");
+            event.stopPropagation();
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!profileButton.contains(event.target) && !profileDropdown.contains(event.target)) {
+                profileDropdown.classList.add("hidden");
+            }
+        });
+    });
+
+    function toggleMenu(button) {
+        const menu = button.nextElementSibling;
+        document.querySelectorAll(".group .absolute > div").forEach(el => {
+            if (el !== menu) el.classList.add("hidden");
+        });
+        menu.classList.toggle("hidden");
+    }
+
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".group")) {
+            document.querySelectorAll(".group .absolute > div").forEach(el => {
+                el.classList.add("hidden");
+            });
+        }
+    });
+</script>
 
 </html>
