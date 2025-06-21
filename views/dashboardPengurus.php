@@ -10,6 +10,13 @@ include __DIR__ . '/../layout/sidebar.php';
 
     <!-- Statistik -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+      <?php foreach ($jumlahAnggotaPerOrganisasi as $item): ?>
+        <div class="bg-white p-4 rounded-lg shadow-md text-center">
+          <p class="text-3xl font-bold text-indigo-600"><?= $item['jumlahAnggota'] ?></p>
+          <p class="text-sm text-gray-500"><?= htmlspecialchars($item['namaOrganisasi']) ?></p>
+        </div>
+      <?php endforeach; ?>
+
       <div class="bg-white p-4 rounded-lg shadow-md text-center">
         <p class="text-3xl font-bold text-blue-600"><?= $tugasAktif ?></p>
         <p class="text-sm text-gray-500">Tugas Aktif</p>
@@ -36,7 +43,7 @@ include __DIR__ . '/../layout/sidebar.php';
       </div>
     <?php endif; ?>
 
-    <!-- Tabel -->
+    <!-- Tabel Tugas -->
     <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 overflow-x-auto">
       <table class="min-w-full divide-y divide-gray-200 text-sm">
         <thead class="bg-gray-100 text-gray-700">
@@ -50,24 +57,23 @@ include __DIR__ . '/../layout/sidebar.php';
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-100">
-          <?php $no = 1;
-          foreach ($tugasList as $data): ?>
+          <?php $no = 1; foreach ($tugasList as $data): ?>
             <tr class="hover:bg-gray-50">
               <td class="px-4 py-2"><?= $no++ ?></td>
               <td class="px-4 py-2 font-medium text-gray-800"><?= htmlspecialchars($data['judul']) ?></td>
               <td class="px-4 py-2 text-gray-600"><?= htmlspecialchars($data['deskripsi']) ?></td>
               <td class="px-4 py-2 text-gray-600"><?= date('d-m-Y', strtotime($data['deadline'])) ?></td>
-              <td class="px-4 py-2 font-semibold <?= $data['status'] === 'Selesai' ? 'text-green-600' : 'text-red-600' ?>">
+              <td class="px-4 py-2 font-semibold <?= strtolower($data['status']) === 'selesai' ? 'text-green-600' : 'text-red-600' ?>">
                 <?= ucfirst($data['status']) ?>
               </td>
               <td class="px-4 py-2 text-center space-x-2">
                 <a href="index.php?route=dashboard&detail=<?= $data['idTugas'] ?>"
-                  class="inline-block px-3 py-1 text-sm text-blue-600 border border-blue-200 hover:bg-blue-100 rounded">
+                   class="inline-block px-3 py-1 text-sm text-blue-600 border border-blue-200 hover:bg-blue-100 rounded">
                   Detail
                 </a>
                 <a href="index.php?route=dashboard&hapus=<?= $data['idTugas'] ?>"
-                  onclick="return confirm('Yakin ingin menghapus tugas ini?')"
-                  class="inline-block px-3 py-1 text-sm text-red-600 border border-red-200 hover:bg-red-100 rounded">
+                   onclick="return confirm('Yakin ingin menghapus tugas ini?')"
+                   class="inline-block px-3 py-1 text-sm text-red-600 border border-red-200 hover:bg-red-100 rounded">
                   Hapus
                 </a>
               </td>
@@ -79,11 +85,9 @@ include __DIR__ . '/../layout/sidebar.php';
   </main>
 </div>
 
-
 <?php include __DIR__ . '/../partials/modal-tambah-tugas.php'; ?>
 <?php $editData = $editData ?? null; ?>
-<?php if ($editData) include __DIR__ . '/../partials/modal-detail-tugas.php'; ?>
-<?php if (isset($editData) && $editData): ?>
+<?php if ($editData): ?>
   <?php include __DIR__ . '/../partials/modal-detail-tugas.php'; ?>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
