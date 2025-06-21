@@ -2,7 +2,6 @@
 session_start();
 include '../../src/includes/koneksi.php';
 
-// Cek user login
 if (!isset($_SESSION['user_id'])) {
     echo "<p class='text-center text-red-500'>Error: User tidak dikenali!</p>";
     exit();
@@ -31,8 +30,7 @@ $result = $stmt->get_result();
             <button class="bg-red-100 text-red-600 text-sm px-3 py-1 rounded-full">Prioritas: Tinggi</button>
             <button class="bg-blue-100 text-blue-600 text-sm px-3 py-1 rounded-full">Status: Belum Selesai</button>
             <button class="text-sm text-gray-600 underline">Hapus Semua</button>
-            <button onclick="bukaModal()" class="bg-indigo-600 text-white text-sm px-4 py-2 rounded-md ml-2">+ Tambah
-                Tugas</button>
+            <button onclick="bukaModal()" class="bg-indigo-600 text-white text-sm px-4 py-2 rounded-md ml-2">+ Tambah Tugas</button>
         </div>
     </div>
 
@@ -90,7 +88,8 @@ $result = $stmt->get_result();
                                 <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <div class="hidden mt-2 w-40 bg-white rounded-lg shadow-lg absolute right-0 z-10 border text-sm">
-                                <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fas fa-pen mr-2"></i>Edit</a>
+                                <a href="../user/includes/editTugas-dashboard.php?id=<?= $row['id'] ?>"
+                                    class="block px-4 py-2 hover:bg-gray-100"><i class="fas fa-pen mr-2"></i>Edit</a>
                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i
                                         class="fas fa-copy mr-2"></i>Duplikat</a>
                                 <a href="#" class="block px-4 py-2 hover:bg-gray-100"><i class="fas fa-check mr-2"></i>Tandai
@@ -104,4 +103,5 @@ $result = $stmt->get_result();
             <?php endif; ?>
         </div>
     </div>
+    
 </main>
