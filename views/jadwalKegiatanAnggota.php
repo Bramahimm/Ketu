@@ -1,40 +1,13 @@
 <?php
 require_once __DIR__ . '/../includes/init.php';
 
-$idUser = $_SESSION['user']['id'] ?? null;
+// Cek role user (harus anggota)
 $roleUser = $_SESSION['user']['role'] ?? null;
-
 if ($roleUser !== 'anggota') {
     header("Location: index.php?route=dashboard");
     exit;
 }
 
-// Ambil ID organisasi yang diikuti user
-$query = "SELECT idOrganisasi FROM user_organisasi WHERE idUser = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("i", $idUser);
-$stmt->execute();
-$result = $stmt->get_result();
-
-$orgIds = [];
-while ($row = $result->fetch_assoc()) {
-    $orgIds[] = $row['idOrganisasi'];
-}
-
-$kegiatanList = [];
-
-if (!empty($orgIds)) {
-    $orgIdsStr = implode(',', array_map('intval', $orgIds));
-    $queryKegiatan = "SELECT * FROM kegiatan WHERE idOrganisasi IN ($orgIdsStr) ORDER BY tanggal ASC";
-    $resultKegiatan = mysqli_query($conn, $queryKegiatan);
-    if ($resultKegiatan) {
-        $kegiatanList = mysqli_fetch_all($resultKegiatan, MYSQLI_ASSOC);
-    }
-}
-?>
-
-
-<?php
 include __DIR__ . '/../layout/header.php';
 include __DIR__ . '/../layout/navbar.php';
 include __DIR__ . '/../layout/sidebar.php';
@@ -73,6 +46,9 @@ include __DIR__ . '/../layout/sidebar.php';
                         </div>
                     </div>
                     <div class="mt-3 text-sm text-gray-600 space-y-1">
+                        <?php if (!empty($kegiatan['namaOrganisasi'])): ?>
+                            <div><i class="fas fa-building mr-2"></i><strong>Organisasi:</strong> <?= htmlspecialchars($kegiatan['namaOrganisasi']) ?></div>
+                        <?php endif; ?>
                         <div><i class="fas fa-calendar-alt mr-2"></i><?= date('d F Y', strtotime($kegiatan['tanggal'])) ?></div>
                         <div><i class="fas fa-map-marker-alt mr-2"></i><?= htmlspecialchars($kegiatan['lokasi']) ?></div>
                         <?php if (!empty($kegiatan['deskripsi'])): ?>
@@ -90,4 +66,5 @@ include __DIR__ . '/../layout/sidebar.php';
         </div>
     <?php endif; ?>
 </main>
+
 <?php include __DIR__ . '/../layout/footer.php'; ?>

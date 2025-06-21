@@ -15,8 +15,14 @@ $organisasiIdsIn = implode(',', array_map('intval', $organisasiIds));
 
 $kegiatanList = [];
 if (!empty($organisasiIdsIn)) {
-  $query = "SELECT * FROM kegiatan WHERE idOrganisasi IN ($organisasiIdsIn) ORDER BY tanggal ASC";
-  $kegiatanList = $conn->query($query);
+  $query = "
+    SELECT k.*, o.namaOrganisasi
+    FROM kegiatan k
+    JOIN organisasi o ON k.idOrganisasi = o.idOrganisasi
+    WHERE k.idOrganisasi IN ($organisasiIdsIn)
+    ORDER BY k.tanggal ASC
+  ";
+  $kegiatanList = $conn->query($query)->fetch_all(MYSQLI_ASSOC);
 }
 
 include __DIR__ . '/../views/jadwalKegiatanAnggota.php';
