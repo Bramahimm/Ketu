@@ -1,21 +1,45 @@
 <?php
-// controller/TugasController.php
+require_once __DIR__ . '/../includes/init.php';
+require_once __DIR__ . '/../models/Tugas.php';
 
-include_once __DIR__ . '/../model/Tugas.php';
-session_start();
-
-if (!isset($_SESSION['user_id'])) {
-  header("Location: /ketu/public/index.php");
+if (!isset($_SESSION['user'])) {
+  header("Location: ../index.php");
   exit;
 }
 
-$id = intval($_GET['id'] ?? 0);
-$user_id = $_SESSION['user_id'];
+$idUser = $_SESSION['user']['id'];
+$roleUser = $_SESSION['user']['role'];
 
-$task = getTugasByIdAndUser($conn, $id, $user_id);
-
-if (!$task) {
-  die("Tugas tidak ditemukan atau bukan milik Anda.");
+// Handle form tambah tugas
+if (isset($_POST['tambah_task'])) {
+  $result = Tugas::tambah($conn, $_POST, $idUser);
+  $message = $result['message'];
+  $messageType = $result['status'];
 }
 
-include __DIR__ . '/../view/tugas/edit.php';
+// Handle update tugas
+if (isset($_POST['edit_task'])) {
+  $result = Tugas::update($conn, $_POST, $idUser);
+  $message = $result['message'];
+  $messageType = $result['status'];
+}
+
+// Handle hapus tugas
+if (isset($_GET['hapus'])) {
+  $idTugas = (int) $_GET['hapus'];
+  $result = Tugas::hapus($conn, $idTugas, $idUser);
+  $message = $result['message'];
+  $messageType = $result['status'];
+}
+
+// Ambil semua tugas user ini
+$tugasList = Tugas::getAllByUser($conn, $idUser);
+
+// Jika ada tugas yang akan diedit
+$editData = null;
+if (isset($_GET['edit'])) {
+  $editData = Tugas::getOne($conn, (int) $_GET['edit'], $idUser);
+}
+
+$title = 'Tugas';
+include __DIR__ . '/../views/tugas.php';
