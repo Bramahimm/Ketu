@@ -1,7 +1,5 @@
 <?php
 session_start();
-session_unset(); // hapus semua data sesi
-session_destroy(); // hancurkan sesi
-header("Location: /ketu/public/index.php");
-
+session_destroy();
+header("Location: ../index.php");
 exit;

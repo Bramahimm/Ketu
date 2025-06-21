@@ -17,6 +17,12 @@ if (isset($_POST['tambah_task'])) {
   $messageType = $result['status'];
 }
 
+// Handle detail tugas anggota (untuk modal)
+$detailData = null;
+if (isset($_GET['detail'])) {
+  $detailData = Tugas::getOne($conn, (int) $_GET['detail'], $idUser);
+}
+
 // Handle update tugas
 if (isset($_POST['edit_task'])) {
   $result = Tugas::update($conn, $_POST, $idUser);

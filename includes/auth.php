@@ -11,7 +11,7 @@ $password = $_POST['password'] ?? '';
 
 // ngevalidasi input
 if (!$email || !$password) {
-    redirectWithError('empty');
+  redirectWithError('empty');
 }
 
 // buat ngambil user dari database
@@ -19,14 +19,14 @@ $user = getUserByEmail($conn, $email);
 
 // buat ngecek kecocokan password
 if (!$user || !password_verify($password, $user['password'])) {
-    redirectWithError('invalid');
+  redirectWithError('invalid');
 }
 
 // ini untuk nyimpan session
 $_SESSION['user'] = [
-    'id'    => $user['idUser'],
-    'nama'  => $user['nama'],
-    'role'  => $user['role'],
+  'id'    => $user['idUser'],
+  'nama'  => $user['nama'],
+  'role'  => $user['role'],
 ];
 
 // Redirect ke dashboard sesuai role
