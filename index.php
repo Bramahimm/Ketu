@@ -22,8 +22,8 @@ switch ($route) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             require_once __DIR__ . '/includes/auth.php';
         } else {
-            include __DIR__ . '/process/login.php';
+            include __DIR__ . '/login.php';
         }
         break;
-        
+    
 }
