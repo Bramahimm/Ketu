@@ -39,5 +39,3 @@ if (isset($_POST['simpan_tugas'])) {
     echo "Gagal menyimpan tugas: " . $stmt->error;
   }
 }
-
-?>
