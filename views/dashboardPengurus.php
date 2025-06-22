@@ -13,7 +13,7 @@ include __DIR__ . '/../layout/sidebar.php';
       <?php foreach ($jumlahAnggotaPerOrganisasi as $item): ?>
         <div class="bg-white p-4 rounded-lg shadow-md text-center">
           <p class="text-3xl font-bold text-indigo-600"><?= $item['jumlahAnggota'] ?></p>
-          <p class="text-sm text-gray-500"><?= htmlspecialchars($item['namaOrganisasi']) ?></p>
+          <p class="text-sm text-gray-500">Jumalah Anggota <?= htmlspecialchars($item['namaOrganisasi']) ?></p>
         </div>
       <?php endforeach; ?>
 

@@ -25,7 +25,7 @@
 
         <!-- Tombol Tambah -->
         <a href="index.php?route=createUser"
-            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition whitespace-nowrap">
+            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:scale-105 whitespace-nowrap">
             <i class="fas fa-plus"></i> Tambah Pengguna
         </a>
     </div>
