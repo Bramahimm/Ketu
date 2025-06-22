@@ -15,7 +15,7 @@ if (!isset($namaUser) && isset($_SESSION['user']['nama'])) {
   <!-- Logo kiri -->
   <div class="flex items-center gap-3">
     <img src="assets/img/orgenius.png" class="w-10 h-10" alt="Logo">
-    <h1 class="text-lg sm:text-xl font-bold text-blue-700">Orgenius</h1>
+    <h1 class="text-lg sm:text-xl font-bold text-blue-700">Ketu</h1>
   </div>
 
   <!-- Profil kanan (responsif) -->
