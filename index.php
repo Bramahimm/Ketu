@@ -36,8 +36,23 @@ switch ($route) {
             include 'controllers/dashboardPengurusController.php';
         } elseif ($role === 'anggota') {
             include 'controllers/dashboardAnggotaController.php';
+        } elseif ($role === 'admin') {
+            include 'controllers/dashboardAdminController.php';
         }
         break;
+
+    case 'dashboardAdmin':
+        include 'controllers/dashboardAdminController.php';
+        break;
+
+    case 'createUser':
+        include 'controllers/createUserController.php';
+        break;
+
+    case 'editUser':
+        include 'controllers/editUserController.php';
+        break;
+
 
     case 'tugas':
         include 'controllers/tugasController.php';
