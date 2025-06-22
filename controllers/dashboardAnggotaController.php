@@ -11,6 +11,6 @@ $idUser = $_SESSION['user']['id'];
 $namaUser = $_SESSION['user']['nama'];
 
 $tugasList = Tugas::getAllByUser($conn, $idUser);
-$title = 'Orgenius - Anggota';
+$title = 'Ketu - Anggota';
 
 include __DIR__ . '/../views/dashboardAnggota.php';

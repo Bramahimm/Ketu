@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../includes/helpers.php";
-$title = 'Orgenius - Login';
+$title = 'Ketu - Login';
 include __DIR__ . '/../layout/header.php';
 ?>
 

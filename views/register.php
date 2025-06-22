@@ -4,12 +4,12 @@ $title = 'Orgenius - Register';
 include __DIR__ . '/../layout/header.php'; // pastikan header.php sudah berisi <meta name="viewport"...>
 ?>
 
-<body class="flex items-center justify-center bg-[#ffe4c4] py-8 px-4 min-h-screen">
+<body class="flex items-center justify-center bg-red-800 py-8 px-4 min-h-screen">
   <div class="bg-white shadow-lg flex flex-col md:flex-row rounded-xl overflow-hidden w-full max-w-sm sm:max-w-md md:max-w-4xl">
     <!-- Gambar kiri, hidden di mobile -->
     <div class="hidden md:block md:w-1/2 relative">
       <img
-        src="assets/img/orgenius.png"
+        src="assets/img/logoKetu.png"
         alt="Illustration"
         class="object-cover w-full h-full" />
       <div class="absolute bottom-0 left-0 w-full text-black p-4 bg-gray-500 bg-opacity-50">
@@ -20,7 +20,7 @@ include __DIR__ . '/../layout/header.php'; // pastikan header.php sudah berisi <
     <!-- Form Registrasi -->
     <div class="w-full md:w-1/2 p-6 md:p-8">
       <div class="text-center mb-6">
-        <img src="assets/img/orgenius.png" alt="Unila" class="mx-auto w-16 md:w-20 mb-2" />
+        <img src="assets/img/logoKetu.png" alt="Unila" class="mx-auto w-16 md:w-20 mb-2" />
         <h2 class="text-xl font-semibold text-gray-700">Silakan Daftar</h2>
 
         <?php if (isset($_GET['error'])): ?>
