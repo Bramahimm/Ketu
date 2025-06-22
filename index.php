@@ -92,6 +92,15 @@ switch ($route) {
         include 'controllers/PermintaanController.php';
         break;
 
+    case 'detailPengguna':
+        if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+            http_response_code(403);
+            echo "<h1>Akses Ditolak</h1>";
+            exit;
+        }
+        include 'controllers/detailPenggunaController.php';
+        break;
+
     default:
         http_response_code(404);
         echo "<h1>404 - Halaman tidak ditemukan</h1>";

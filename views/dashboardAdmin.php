@@ -13,22 +13,22 @@
     </div>
   <?php endif; ?>
 
-    <!-- Statistik Jumlah Pengguna + Tombol Tambah -->
-    <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-        <!-- Kartu Statistik -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full md:w-auto">
-            <div class="bg-white p-4 rounded-lg shadow-md text-center">
-            <p class="text-3xl font-bold text-indigo-600"><?= $totalUser ?></p>
-            <p class="text-sm text-gray-500">Total Pengguna</p>
-            </div>
-        </div>
-
-        <!-- Tombol Tambah -->
-        <a href="index.php?route=createUser"
-            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:scale-105 whitespace-nowrap">
-            <i class="fas fa-plus"></i> Tambah Pengguna
-        </a>
+  <!-- Statistik Jumlah Pengguna + Tombol Tambah -->
+  <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+    <!-- Kartu Statistik -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full md:w-auto">
+      <div class="bg-white p-4 rounded-lg shadow-md text-center">
+        <p class="text-3xl font-bold text-indigo-600"><?= $totalUser ?></p>
+        <p class="text-sm text-gray-500">Total Pengguna</p>
+      </div>
     </div>
+
+    <!-- Tombol Tambah -->
+    <a href="index.php?route=createUser"
+      class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:scale-105 whitespace-nowrap">
+      <i class="fas fa-plus"></i> Tambah Pengguna
+    </a>
+  </div>
 
 
   <!-- Tabel User -->
@@ -73,6 +73,8 @@
                   <div class="flex justify-center gap-2">
                     <a href="index.php?route=editUser&id=<?= $user['idUser'] ?>"
                       class="text-blue-600 hover:text-blue-900 bg-blue-100 hover:bg-blue-200 px-3 py-1 rounded text-center">Edit</a>
+                    <a href="index.php?route=detailPengguna&id=<?= $user['idUser'] ?>"
+                      class="text-blue-600 hover:underline">Detail</a>
                     <a href="index.php?route=dashboardAdmin&hapus=<?= $user['idUser'] ?>"
                       onclick="return confirm('Yakin ingin menghapus user ini?')"
                       class="text-red-600 hover:text-red-900 bg-red-100 hover:bg-red-200 px-3 py-1 rounded text-center">Hapus</a>
