@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . '/../includes/helpers.php';
-$title = 'Orgenius - Register';
+$title = 'Ketu - Register';
 include __DIR__ . '/../layout/header.php'; // pastikan header.php sudah berisi <meta name="viewport"...>
 ?>
 
@@ -13,7 +13,7 @@ include __DIR__ . '/../layout/header.php'; // pastikan header.php sudah berisi <
         alt="Illustration"
         class="object-cover w-full h-full" />
       <div class="absolute bottom-0 left-0 w-full text-black p-4 bg-gray-500 bg-opacity-50">
-        <p class="text-sm font-semibold">Sistem Kelola Tugas & Organisasi</p>
+        <p class="text-sm font-semibold">Sistem Kelola Tugas & Organisasi (SiKetu)</p>
       </div>
     </div>
 
