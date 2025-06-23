@@ -37,11 +37,22 @@ switch ($route) {
         } elseif ($role === 'anggota') {
             include 'controllers/dashboardAnggotaController.php';
         } elseif ($role === 'admin') {
-            header("Location: index.php?route=kelola-pengguna");
-            exit;
-        }
-
+            include 'controllers/dashboardAdminController.php';
+        } 
         break;
+
+    case 'dashboardAdmin':
+        include 'controllers/dashboardAdminController.php';
+        break;
+
+    case 'createUser':
+        include 'controllers/createUserController.php';
+        break;
+
+    case 'editUser':
+        include 'controllers/editUserController.php';
+        break;
+
 
     case 'tugas':
         include 'controllers/tugasController.php';
@@ -79,6 +90,15 @@ switch ($route) {
 
     case 'permintaan':
         include 'controllers/PermintaanController.php';
+        break;
+
+    case 'detailPengguna':
+        if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+            http_response_code(403);
+            echo "<h1>Akses Ditolak</h1>";
+            exit;
+        }
+        include 'controllers/detailPenggunaController.php';
         break;
 
     default:

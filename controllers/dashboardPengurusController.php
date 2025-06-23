@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../includes/init.php';
 requireRole('pengurus');
-
+require_once __DIR__ . '/../models/Organisasi.php';
 require_once __DIR__ . '/../models/Tugas.php';
 require_once __DIR__ . '/../models/Kegiatan.php';
 
@@ -29,5 +29,6 @@ if (isset($_GET['detail'])) {
   $editData = Tugas::getOne($conn, (int)$_GET['detail'], $idUser);
 }
 
+$jumlahAnggotaPerOrganisasi = Organisasi::getJumlahAnggotaPerOrganisasi($conn, $idUser);
 
 include __DIR__ . '/../views/dashboardPengurus.php';
