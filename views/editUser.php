@@ -33,8 +33,8 @@
       </div>
 
       <div>
-        <label class="block text-sm font-medium">Password (kosongkan jika tidak diubah)</label>
-        <input type="password" name="password" class="w-full border rounded px-3 py-2">
+        <label class="block text-sm font-medium">Password</label>
+        <input type="password" name="password" class="w-full border rounded px-3 py-2" placeholder="kosongkan jika tidak diubah">
       </div>
 
       <div class="col-span-2 text-right">

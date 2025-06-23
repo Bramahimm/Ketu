@@ -14,7 +14,7 @@ if (!isset($namaUser) && isset($_SESSION['user']['nama'])) {
   </button>
   <!-- Logo kiri -->
   <div class="flex items-center gap-3">
-    <img src="../assets/img/logoketu.png" class="w-10 h-10" alt="Logo">
+    <img src="/ketu/assets/img/logoketu.png" class="w-10 h-10" alt="Logo">
     <h1 class="text-lg sm:text-xl font-bold text-blue-700">Ketu</h1>
   </div>
 
