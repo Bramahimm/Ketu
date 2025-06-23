@@ -14,13 +14,8 @@ if (!isset($namaUser) && isset($_SESSION['user']['nama'])) {
   </button>
   <!-- Logo kiri -->
   <div class="flex items-center gap-3">
-<<<<<<< HEAD
-    <img src="assets/img/logoKetu.png" class="w-10 h-10" alt="Logo">
-    <h1 class="text-lg sm:text-xl font-bold text-white">Ketu </h1>
-=======
     <img src="../assets/img/logoketu.png" class="w-10 h-10" alt="Logo">
     <h1 class="text-lg sm:text-xl font-bold text-blue-700">Ketu</h1>
->>>>>>> 5592ebcc367ef4abb8a44b7122d1b8a737b3b22f
   </div>
 
   <!-- Profil kanan (responsif) -->
