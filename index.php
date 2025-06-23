@@ -73,32 +73,6 @@ switch ($route) {
         include 'controllers/verifikasiRequestController.php';
         break;
 
-    case 'dashboard-admin':
-        include 'controllers/dashboardAdminController.php';
-        break;
-
-    case 'edit-pengguna':
-    case 'kelola-pengguna':
-    case 'tambah-pengguna':
-    case 'hapus-pengguna':
-    case 'detail-pengguna':
-        if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-            http_response_code(403);
-            echo "<h1>Akses Ditolak</h1>";
-            exit;
-        }
-        include 'controllers/adminController.php';
-        break;
-
-
-    case 'edit-pengguna':
-        if ($_SESSION['user']['role'] !== 'admin') {
-            echo "Akses ditolak!";
-            exit;
-        }
-        include 'controllers/adminController.php';
-        break;
-
     case 'organisasi':
         include 'controllers/organisasiAnggotaController.php';
         break;

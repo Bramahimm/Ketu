@@ -20,7 +20,7 @@ if (!isset($namaUser) && isset($_SESSION['user']['nama'])) {
 
   <!-- Profil kanan (responsif) -->
   <div class="flex items-center gap-2 sm:gap-3">
-    <span class="hidden xs:inline font-medium text-gray-800 text-sm sm:text-base">
+    <span class="hidden xs:inline font-medium text-white text-sm sm:text-base">
       <?= htmlspecialchars($namaUser ?? 'Pengguna') ?>
     </span>
     <img

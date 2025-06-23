@@ -1,5 +1,11 @@
 <?php
-require_once __DIR__ . "/../includes/helpers.php";
+require_once __DIR__ . '/../includes/init.php';
+
+if (isset($_SESSION['user'])) {
+    header("Location: ../index.php?route=dashboard");
+    exit;
+}
+
 $title = 'Ketu - Login';
 include __DIR__ . '/../layout/header.php';
 ?>
